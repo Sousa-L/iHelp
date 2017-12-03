@@ -1,9 +1,15 @@
 import React from 'react';
-import { ScrollView, View, Text, StyleSheet, Dimensions } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Dimensions, Button, TouchableOpacity } from 'react-native';
 
+import call from 'react-native-phone-call';
 import MapView from 'react-native-maps';
 
 const { height, width } = Dimensions.get('window');
+const call_args = {
+  number: '8533361127', // String value with the number to call
+  prompt: false // Optional boolean property. Determines if the user should be prompt prior to the call
+}
+
 
 export default class MapScreen extends React.Component {
     state = {
@@ -16,6 +22,10 @@ export default class MapScreen extends React.Component {
           number: '(99)99999-9999',
           latitude: -4.107493,
           longitude: -38.498605,
+          args : {
+            number: '99999999999',
+            prompt: false
+          },
         },
         {
           id: 2,
@@ -25,6 +35,10 @@ export default class MapScreen extends React.Component {
           number: '(99)99999-9999',
           latitude: -4.104493,
           longitude: -38.468605,
+          args : {
+            number: '99999999999',
+            prompt: false
+          },
         },
         {
           id: 3,
@@ -34,6 +48,10 @@ export default class MapScreen extends React.Component {
           number: '(99)99999-9999',
           latitude: -4.106493,
           longitude: -38.478605,
+          args : {
+            number: '99999999999',
+            prompt: false
+          },
         }
       ],
     };
@@ -78,7 +96,7 @@ export default class MapScreen extends React.Component {
             />
             ))}
           </MapView>
-          <ScrollView 
+          <ScrollView
             style={styles.placesContainer}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -108,6 +126,9 @@ export default class MapScreen extends React.Component {
                   <Text>{place.description}</Text>
                   <Text>Endereço: {place.adress}</Text>
                   <Text>Contato: {place.number}</Text>
+                  <TouchableOpacity style={styles.call} onPress={() => call(place.args).catch(console.error)}>
+                    <Text style={styles.textLight}>Ligar</Text>
+                  </TouchableOpacity>
                 </View>
               )) }
           </ScrollView>
@@ -122,12 +143,26 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
   },
+  call: {
+    width: '50%',
+    backgroundColor: '#3fad7a',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    paddingTop: 7,
+    paddingBottom: 7,
+  },
   map: {
     position: 'absolute',
     top: 0,
     left: 0,
     bottom: 0,
     right: 0,
+  },
+  textLight: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   placesContainer: {
     width: '100%',
