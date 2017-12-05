@@ -11,22 +11,22 @@ export default class SelectScreen extends React.Component {
       return (
         <View style={styles.container}>
           <View style={styles.line}>
-            <TouchableOpacity style={styles.selectLight} onPress={() => navigate('Maps')}>
+            <TouchableOpacity style={styles.selectLight} onPress={() => navigate('ComputerMap')}>
                 <Text style={styles.textDark}>Computadores/Notebooks.</Text>
                 <Image style={styles.icon} source={require('../img/computador.png')} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.selectDark} onPress={() => navigate('Maps')}>
+            <TouchableOpacity style={styles.selectDark} onPress={() => navigate('AirconditionerMap')}>
                 <Text style={styles.textDark}>Ar Condicionados.</Text>
                 <Image style={styles.icon} source={require('../img/ar-condicionado.png')} />
             </TouchableOpacity>
           </View>
           <View style={styles.line}>
-            <TouchableOpacity style={styles.selectDark} onPress={() => navigate('Maps')}>
-                <Text style={styles.textDark}>Maquina de Lavar.</Text>
-                <Image style={styles.icon} source={require('../img/lavadora.png')} />
+            <TouchableOpacity style={styles.selectDark} onPress={() => navigate('PrinterMap')}>
+                <Text style={styles.textDark}>Impressoras.</Text>
+                <Image style={styles.icon} source={require('../img/impressora.png')} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.selectLight} onPress={() => navigate('Maps')}>
-                <Text style={styles.textDark}>Outros eletrodomésticos.</Text>
+            <TouchableOpacity style={styles.selectLight} onPress={() => navigate('RefrigeratorMap')}>
+                <Text style={styles.textDark}>Geladeiras.</Text>
                 <Image style={styles.icon} source={require('../img/geladeira.png')} />
             </TouchableOpacity>
           </View>
