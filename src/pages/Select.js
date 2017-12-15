@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } from 'native-base';
 
 export default class SelectScreen extends React.Component {
@@ -19,19 +19,19 @@ export default class SelectScreen extends React.Component {
               id: 2,
               title: 'Microondas',
               icon: require('../img/geladeira.png'),
-              page: 'MicrowaveMap',
+              page: 'AirconditionerMap',
             },
             {
               id: 3,
               title: 'Maquina de lavar',
               icon: require('../img/lavadora.png'),
-              page: 'WasherMap',
+              page: 'RefrigeratorMap',
             },
             {
               id: 4,
               title: 'Microondas',
               icon: require('../img/geladeira.png'),
-              page: 'MicrowaveMap',
+              page: 'AirconditionerMap',
             },
           ],
         },
@@ -49,7 +49,7 @@ export default class SelectScreen extends React.Component {
               id: 2,
               title: 'Notebook',
               icon: require('../img/computador.png'),
-              page: 'NotebookMap',
+              page: 'ComputerMap',
             },
             {
               id: 3,
@@ -69,7 +69,7 @@ export default class SelectScreen extends React.Component {
       const {navigate} = this.props.navigation;
       return (
         <Container>
-          <Header style={{backgroundColor:"#3fad7a"}}>
+          <Header style={styles.header}>
             <Left>
               <Button transparent>
                 <Icon name='menu' />
@@ -84,7 +84,8 @@ export default class SelectScreen extends React.Component {
               </Button>
             </Right>
           </Header>
-          <Content>
+          <Content style={styles.content}>
+            <Image style={styles.background} source={require('../img/pattern2.png')} />
             { this.state.services.map(service =>(
               <View key={service.id} style={styles.container}>
                 <View style={styles.service}>
@@ -96,10 +97,10 @@ export default class SelectScreen extends React.Component {
                   showsHorizontalScrollIndicator={false}
                   >
                     { service.categories.map(category =>(
-                      <View key={category.id} style={styles.card} onPress={() => navigate(category.page)}>
+                      <TouchableOpacity key={category.id} style={styles.card} onPress={() => navigate(category.page)}>
                         <Image style={styles.icon} source={category.icon}/>
                         <Text style={styles.textDark}>{category.title}</Text>
-                      </View>
+                      </TouchableOpacity>
                     )) }
                 </ScrollView>
               </View>
@@ -137,6 +138,12 @@ export default class SelectScreen extends React.Component {
     container: {
       flex: 1,
     },
+    header: {
+      backgroundColor:"#3fad7a",
+    },
+    content: {
+      backgroundColor: '#d4efe3',
+    },
     service: {
       backgroundColor: '#f5372b',
       left: 0,
@@ -155,6 +162,13 @@ export default class SelectScreen extends React.Component {
       padding: 5,
       backgroundColor: '#3fad7a',
       marginRight: 5,
+    },
+    background: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
     },
     selectLight: {
       flex: 1,
