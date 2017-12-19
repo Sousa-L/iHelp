@@ -4,6 +4,8 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Content } fr
 
 export default class SelectScreen extends React.Component {
     state = {
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
       services: [
         {
           id: 1,
@@ -12,25 +14,25 @@ export default class SelectScreen extends React.Component {
             {
               id: 1,
               title: 'Geladeira',
-              icon: require('../img/geladeira.png'),
+              icon: require('../img/refrigerator.png'),
               page: 'RefrigeratorMap',
             },
             {
               id: 2,
               title: 'Microondas',
-              icon: require('../img/geladeira.png'),
+              icon: require('../img/refrigerator.png'),
               page: 'AirconditionerMap',
             },
             {
               id: 3,
               title: 'Maquina de lavar',
-              icon: require('../img/lavadora.png'),
+              icon: require('../img/refrigerator.png'),
               page: 'RefrigeratorMap',
             },
             {
               id: 4,
               title: 'Microondas',
-              icon: require('../img/geladeira.png'),
+              icon: require('../img/refrigerator.png'),
               page: 'AirconditionerMap',
             },
           ],
@@ -42,20 +44,80 @@ export default class SelectScreen extends React.Component {
             {
               id: 1,
               title: 'Computador',
-              icon: require('../img/computador.png'),
+              icon: require('../img/computer.png'),
               page: 'ComputerMap',
             },
             {
               id: 2,
               title: 'Notebook',
-              icon: require('../img/computador.png'),
+              icon: require('../img/computer.png'),
               page: 'ComputerMap',
             },
             {
               id: 3,
               title: 'Impressora',
-              icon: require('../img/impressora.png'),
+              icon: require('../img/computer.png'),
               page: 'PrinterMap',
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: 'Eletrodomésticos',
+          categories: [
+            {
+              id: 1,
+              title: 'Geladeira',
+              icon: require('../img/notebook.png'),
+              page: 'RefrigeratorMap',
+            },
+            {
+              id: 2,
+              title: 'Microondas',
+              icon: require('../img/notebook.png'),
+              page: 'AirconditionerMap',
+            },
+            {
+              id: 3,
+              title: 'Maquina de lavar',
+              icon: require('../img/notebook.png'),
+              page: 'RefrigeratorMap',
+            },
+            {
+              id: 4,
+              title: 'Microondas',
+              icon: require('../img/notebook.png'),
+              page: 'AirconditionerMap',
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: 'Eletrodomésticos',
+          categories: [
+            {
+              id: 1,
+              title: 'Geladeira',
+              icon: require('../img/microwave.png'),
+              page: 'RefrigeratorMap',
+            },
+            {
+              id: 2,
+              title: 'Microondas',
+              icon: require('../img/microwave.png'),
+              page: 'AirconditionerMap',
+            },
+            {
+              id: 3,
+              title: 'Maquina de lavar',
+              icon: require('../img/microwave.png'),
+              page: 'RefrigeratorMap',
+            },
+            {
+              id: 4,
+              title: 'Microondas',
+              icon: require('../img/microwave.png'),
+              page: 'AirconditionerMap',
             },
           ],
         },
@@ -86,25 +148,31 @@ export default class SelectScreen extends React.Component {
           </Header>
           <Content style={styles.content}>
             <Image style={styles.background} source={require('../img/pattern2.png')} />
-            { this.state.services.map(service =>(
-              <View key={service.id} style={styles.container}>
-                <View style={styles.service}>
-                  <Text>{service.title}</Text>
+            <ScrollView
+              style={styles.menu}
+              showsVerticalScrollIndicator={false}
+              >
+              { this.state.services.map(service =>(
+                <View key={service.id} style={styles.container}>
+                  <View style={styles.service}>
+                    <Text style={styles.title}>{service.title}</Text>
+                  </View>
+                  <ScrollView
+                    style={styles.line}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    >
+                      { service.categories.map(category =>(
+                        <TouchableOpacity key={category.id} style={styles.card} onPress={() => navigate(category.page)}>
+                          <Image style={styles.icon} source={category.icon}/>
+                          <Text style={styles.textLight}>{category.title}</Text>
+                        </TouchableOpacity>
+                      )) }
+                  </ScrollView>
+                  <Image style={styles.arrow} source={require('../img/arrow.png')} />
                 </View>
-                <ScrollView
-                  style={styles.line}
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  >
-                    { service.categories.map(category =>(
-                      <TouchableOpacity key={category.id} style={styles.card} onPress={() => navigate(category.page)}>
-                        <Image style={styles.icon} source={category.icon}/>
-                        <Text style={styles.textDark}>{category.title}</Text>
-                      </TouchableOpacity>
-                    )) }
-                </ScrollView>
-              </View>
-            )) }
+              )) }
+            </ScrollView>
           </Content>
         </Container>
         /*
@@ -145,12 +213,18 @@ export default class SelectScreen extends React.Component {
       backgroundColor: '#d4efe3',
     },
     service: {
-      backgroundColor: '#f5372b',
-      left: 0,
+      backgroundColor: 'rgba(245, 55, 43, 0.8)',
+      left: -10,
       marginTop: 5,
       marginBottom: 5,
       padding: 5,
-      width: '45%',
+      paddingLeft: 15,
+      width: '46%',
+      borderRadius: 10,
+    },
+    menu: {
+      position: 'relative',
+      marginBottom: 5,
     },
     line: {
         left: 0,
@@ -162,13 +236,17 @@ export default class SelectScreen extends React.Component {
       padding: 5,
       backgroundColor: '#3fad7a',
       marginRight: 5,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 10,
     },
     background: {
       position: 'absolute',
       top: 0,
       left: 0,
+      bottom: 0,
       width: Dimensions.get('window').width,
-      height: Dimensions.get('window').height,
+      height: '100%',
     },
     selectLight: {
       flex: 1,
@@ -192,5 +270,17 @@ export default class SelectScreen extends React.Component {
     },
     textDark: {
         color: '#000',
+    },
+    title: {
+      color: '#fff',
+      fontWeight: 'bold',
+    },
+    arrow: {
+      position: 'absolute',
+      right: 10,
+      height: 50,
+      width: 50,
+      marginTop: 90,
+      opacity: 0.4,
     },
   });
