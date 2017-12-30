@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 
 
 
@@ -11,8 +11,9 @@ export default class WelcomeScreen extends React.Component {
       const {navigate} = this.props.navigation;
       return (
         <View style={styles.container}>
-          <Image style={styles.background} source={require('../img/pattern2.png')} />
-          <Image style={styles.icon} source={require('../img/icon.png')} />
+          <Image style={styles.background} source={require('../img/background.jpg')} />
+          <Image style={styles.background2} source={require('../img/pattern.png')} />
+          <Image style={styles.icon} source={require('../img/icont.png')} />
             <TouchableOpacity style={styles.button} onPress={() => navigate('Select')}>
               <Text style={styles.textLight}>Clique para começar</Text>
             </TouchableOpacity>
@@ -40,6 +41,14 @@ export default class WelcomeScreen extends React.Component {
       width: Dimensions.get('window').width,
       height: Dimensions.get('window').height,
     },
+    background2: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
+      opacity: 0.4,
+    },
     textLight: {
       color: '#fff',
     },
@@ -48,10 +57,11 @@ export default class WelcomeScreen extends React.Component {
     },
     button: {
       width: '75%',
-      backgroundColor: '#f5372b',
+      backgroundColor: 'rgba(80, 149, 240, 0.6)',
       alignItems: 'center',
       justifyContent: 'center',
       paddingTop: 7,
       paddingBottom: 7,
+      borderRadius: 10,
     },
   });
