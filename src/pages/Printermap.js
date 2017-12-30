@@ -5,51 +5,51 @@ import call from 'react-native-phone-call';
 import MapView from 'react-native-maps';
 
 const { height, width } = Dimensions.get('window');
-const call_args = {
-  number: '8533361127', // String value with the number to call
-  prompt: false // Optional boolean property. Determines if the user should be prompt prior to the call
-}
 
 
-export default class MapScreen extends React.Component {
+
+export default class PrinterMapScreen extends React.Component {
     state = {
       places: [
         {
           id: 1,
-          title: 'João Paulo',
-          description: 'Sempre disponível',
-          adress: 'Rua Francisco Geraldo',
-          number: '(99)99999-9999',
-          latitude: -4.107493,
-          longitude: -38.498605,
+          title: 'João das Impressoras',
+          description: 'De Segunda à Sexta. Visita a domicílio.',
+          information: 'Desde 2005 no ramo',
+          adress: 'Av. Pres. Castelo Branco',
+          number: '(85)77777-7777',
+          latitude: -4.106396,
+          longitude: -38.492591,
           args : {
-            number: '99999999999',
+            number: '85777777777',
             prompt: false
           },
         },
         {
           id: 2,
-          title: 'José Henrique',
-          description: 'Apenas nos fins de semana',
-          adress: 'Rua Ciro Bilhar',
-          number: '(99)99999-9999',
-          latitude: -4.104493,
-          longitude: -38.468605,
+          title: 'Marcos da Silva',
+          description: 'Apenas nos fins de semana pela manhã',
+          information: 'Curso técnico de impressoras',
+          adress: 'Rua Baturité',
+          number: '(85)88888-8888',
+          latitude: -4.110334,
+          longitude: -38.490939,
           args : {
-            number: '99999999999',
+            number: '85888888888',
             prompt: false
           },
         },
         {
           id: 3,
-          title: 'Maria Tereza',
-          description: 'Disponível: Sexta, Sábado e Domingo',
+          title: 'Paulo Daniel',
+          description: 'Segunda-Sábado. 7:00-17:00.',
+          information: 'Enche cartuchos',
           adress: 'Rua Raimundo Nogueira',
-          number: '(99)99999-9999',
-          latitude: -4.106493,
-          longitude: -38.478605,
+          number: '(85)99999-9999',
+          latitude: -4.100362,
+          longitude: -38.495617,
           args : {
-            number: '99999999999',
+            number: '85999999999',
             prompt: false
           },
         }
@@ -124,6 +124,7 @@ export default class MapScreen extends React.Component {
                 <View key={place.id} style={styles.place}>
                   <Text>{place.title}</Text>
                   <Text>{place.description}</Text>
+                  <Text>{place.information}</Text>
                   <Text>Endereço: {place.adress}</Text>
                   <Text>Contato: {place.number}</Text>
                   <TouchableOpacity style={styles.call} onPress={() => call(place.args).catch(console.error)}>

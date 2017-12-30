@@ -5,51 +5,51 @@ import call from 'react-native-phone-call';
 import MapView from 'react-native-maps';
 
 const { height, width } = Dimensions.get('window');
-const call_args = {
-  number: '8533361127', // String value with the number to call
-  prompt: false // Optional boolean property. Determines if the user should be prompt prior to the call
-}
 
 
-export default class MapScreen extends React.Component {
+
+export default class RefrigeratorMapScreen extends React.Component {
     state = {
       places: [
         {
           id: 1,
-          title: 'João Paulo',
-          description: 'Sempre disponível',
+          title: 'José Capistrano e Antonieta',
+          description: 'Segunda às Sexta. 6:00 às 16:00',
+          information: 'Também trabalhamos com conserto de freezer.',
           adress: 'Rua Francisco Geraldo',
-          number: '(99)99999-9999',
+          number: '(85)10101-1010',
           latitude: -4.107493,
           longitude: -38.498605,
           args : {
-            number: '99999999999',
+            number: '85101011010',
             prompt: false
           },
         },
         {
           id: 2,
-          title: 'José Henrique',
-          description: 'Apenas nos fins de semana',
-          adress: 'Rua Ciro Bilhar',
-          number: '(99)99999-9999',
-          latitude: -4.104493,
-          longitude: -38.468605,
+          title: 'Uilson Pereyra',
+          description: 'Apenas nos fins de semana. 8:00-17:00',
+          information: 'Curso técnico de assistência para geladeiras',
+          adress: 'Rua Antônio Agostinho Da Silva',
+          number: '(85)12121-1212',
+          latitude: -4.101006,
+          longitude: -38.499556,
           args : {
-            number: '99999999999',
+            number: '85121211212',
             prompt: false
           },
         },
         {
           id: 3,
-          title: 'Maria Tereza',
+          title: 'Luiza Steffani',
           description: 'Disponível: Sexta, Sábado e Domingo',
-          adress: 'Rua Raimundo Nogueira',
-          number: '(99)99999-9999',
-          latitude: -4.106493,
-          longitude: -38.478605,
+          information: 'Faz visita à domicílio',
+          adress: 'Rua Mavel',
+          number: '(85)13131-1313',
+          latitude: -4.093459,
+          longitude: -38.492065,
           args : {
-            number: '99999999999',
+            number: '85131311313',
             prompt: false
           },
         }
@@ -124,6 +124,7 @@ export default class MapScreen extends React.Component {
                 <View key={place.id} style={styles.place}>
                   <Text>{place.title}</Text>
                   <Text>{place.description}</Text>
+                  <Text>{place.information}</Text>
                   <Text>Endereço: {place.adress}</Text>
                   <Text>Contato: {place.number}</Text>
                   <TouchableOpacity style={styles.call} onPress={() => call(place.args).catch(console.error)}>

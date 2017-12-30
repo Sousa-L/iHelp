@@ -5,51 +5,50 @@ import call from 'react-native-phone-call';
 import MapView from 'react-native-maps';
 
 const { height, width } = Dimensions.get('window');
-const call_args = {
-  number: '8533361127', // String value with the number to call
-  prompt: false // Optional boolean property. Determines if the user should be prompt prior to the call
-}
 
 
-export default class MapScreen extends React.Component {
+export default class AirconditionerMapScreen extends React.Component {
     state = {
       places: [
         {
           id: 1,
-          title: 'João Paulo',
-          description: 'Sempre disponível',
-          adress: 'Rua Francisco Geraldo',
-          number: '(99)99999-9999',
-          latitude: -4.107493,
-          longitude: -38.498605,
+          title: 'Tudo frio',
+          description: 'Segunda à sábado. 8:00-17:00.',
+          information: 'Consertos e instalações',
+          adress: 'Rua João  Eufrásio',
+          number: '(85)44444-4444',
+          latitude: -4.092776,
+          longitude: -38.499386,
           args : {
-            number: '99999999999',
+            number: '85444444444',
             prompt: false
           },
         },
         {
           id: 2,
-          title: 'José Henrique',
+          title: 'Zé Maria',
           description: 'Apenas nos fins de semana',
+          information: 'Trabalha com limpeza de ar condicionados',
           adress: 'Rua Ciro Bilhar',
-          number: '(99)99999-9999',
-          latitude: -4.104493,
-          longitude: -38.468605,
+          number: '(85)55555-5555',
+          latitude: -4.103710,
+          longitude: -38.487793,
           args : {
-            number: '99999999999',
+            number: '85555555555',
             prompt: false
           },
         },
         {
           id: 3,
-          title: 'Maria Tereza',
-          description: 'Disponível: Sexta, Sábado e Domingo',
-          adress: 'Rua Raimundo Nogueira',
-          number: '(99)99999-9999',
-          latitude: -4.106493,
-          longitude: -38.478605,
+          title: 'Gleidisson Alves',
+          description: 'Segunda-Sexta. Horário comercial.',
+          information: 'Tem curso de Técnico em Manutenção.',
+          adress: 'Rua Arco-Íris',
+          number: '(85)66666-6666',
+          latitude: -4.112211,
+          longitude: -38.486130,
           args : {
-            number: '99999999999',
+            number: '85666666666',
             prompt: false
           },
         }
@@ -124,6 +123,7 @@ export default class MapScreen extends React.Component {
                 <View key={place.id} style={styles.place}>
                   <Text>{place.title}</Text>
                   <Text>{place.description}</Text>
+                  <Text>{place.information}</Text>
                   <Text>Endereço: {place.adress}</Text>
                   <Text>Contato: {place.number}</Text>
                   <TouchableOpacity style={styles.call} onPress={() => call(place.args).catch(console.error)}>
