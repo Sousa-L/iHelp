@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     left: 0,
     width: metrics.screenWidth,
     height: metrics.screenHeight,
+    opacity: 0.2,
   },
 });
 
