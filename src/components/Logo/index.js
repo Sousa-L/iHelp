@@ -4,11 +4,11 @@ import React, { Component } from 'react';
 import {
   Image,
 } from 'react-native';
+import { metrics } from '../../styles';
 
-export default class Logo extends Component {
-  render() {
-    return (
-      <Image style={{height: this.props.size, width: this.props.size}} source={require('../../images/logo.png')} />
+const Logo = (props) => (
+      <Image style={{height: props.size, width: props.size, margin: metrics.baseMargin}} source={require('../../images/logo.png')} />
     );
-  }
-}
+
+
+export default Logo;
