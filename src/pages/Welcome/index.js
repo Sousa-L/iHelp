@@ -17,7 +17,7 @@ export default class WelcomeScreen extends React.Component {
           <Background image={require('../../images/pattern.png')} />
           <View style={styles.container}>
             <Mark logoSize={200} />
-            <WelcomeMenu />
+            <WelcomeMenu navigation={this.props.navigation} />
           </View>
       </Container>
     );
