@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Content, Item, Input, Label } from 'native-base';
+import { Container } from 'native-base';
 
 import { Logo, Background, WelcomeMenu, Mark } from '../../components';
 import styles from './styles';
