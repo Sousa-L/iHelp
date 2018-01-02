@@ -25,7 +25,8 @@ export default class WelcomeScreen extends React.Component {
                 <View style={{flexDirection: 'row', alignItems: 'center'}}>
                   <Item style={{borderColor: '#fff'}}>
                     <Label style={{margin:metrics.baseMargin, fontSize: fonts.big, fontWeight: 'bold', color: colors.white}}>Email:</Label>
-                    <Input placeholderTextColor='#c0c0c0' placeholder="Clique aqui para digitar seu email" />
+                    <Input style={{fontSize: fonts.big}} placeholderTextColor='#c0c0c0' placeholder="Clique aqui para digitar seu email" />
+                    <TouchableOpacity><Icon style={{margin: metrics.smallMargin, color: colors.white}} name='ios-arrow-dropright' /></TouchableOpacity>
                   </Item>
                 </View>
                 <TouchableOpacity style={{margin:metrics.doubleBaseMargin, alignItems: 'center'}}>
