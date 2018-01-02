@@ -7,19 +7,19 @@ import styles from './styles';
 import { metrics, fonts, colors } from '../../styles';
 
 export default class WelcomeScreen extends React.Component {
-    static navigationOptions = {
-      header: null
-    };
-    render() {
-      const {navigate} = this.props.navigation;
-      return (
-        <Container>
-            <Background image={require('../../images/pattern.png')} />
-            <View style={styles.container}>
-              <Mark logoSize={200} />
-              <WelcomeMenu />
-            </View>
-        </Container>
-      );
-    }
+  static navigationOptions = {
+    header: null
+  };
+  render() {
+    const {navigate} = this.props.navigation;
+    return (
+      <Container>
+          <Background image={require('../../images/pattern.png')} />
+          <View style={styles.container}>
+            <Mark logoSize={200} />
+            <WelcomeMenu />
+          </View>
+      </Container>
+    );
   }
+}
