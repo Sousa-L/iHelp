@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Content, Item, Input, Label } from 'native-base';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Content, Form, Item, Input, Label } from 'native-base';
 
 import { Logo, Background, WelcomeMenu, Mark } from '../../components';
 import styles from './styles';
@@ -15,20 +15,42 @@ export default class RegisterScreen extends React.Component {
     return (
       <Container>
           <Header
-            noShadow
-            style={{backgroundColor: colors.primary}}
+            style={styles.header}
             androidStatusBarColor={colors.primaryDarker}
             >
             <Body>
-              <Text style={{fontSize: fonts.bigger, color: colors.white}}>Cadastro</Text>
+              <Text style={styles.headerBody}>Cadastro</Text>
             </Body>
             <Right>
-              <Icon style={{color: colors.white}} name='ios-arrow-dropright' />
+              <Icon style={styles.icon} name='ios-information-circle' />
             </Right>
           </Header>
-          <Content padder>
+          <Content style={styles.content}>
             <View>
-              <Text>Teste</Text>
+              <Form>
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>Nome completo:</Label>
+                  <Input />
+                </Item>
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>Senha:</Label>
+                  <Input />
+                </Item>
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>Repita a senha:</Label>
+                  <Input />
+                </Item>
+                <Item floatingLabel style={styles.item}>
+                  <Label style={styles.label}>CPF:</Label>
+                  <Input />
+                </Item>
+              </Form>
+              <View style={styles.containerSubmit}>
+                <Button style={styles.buttonSubmit}>
+                  <Text style={styles.textSubmit}>Enviar</Text>
+                  <Icon style={styles.iconSubmit} name='ios-arrow-dropright-circle' />
+                </Button>
+              </View>
             </View>
           </Content>
       </Container>
