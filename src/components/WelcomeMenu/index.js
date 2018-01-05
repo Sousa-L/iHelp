@@ -17,7 +17,7 @@ export default class WelcomeMenu extends React.Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}><Icon style={styles.icon} name='ios-arrow-dropright' /></TouchableOpacity>
           </Item>
         </View>
-        <TouchableOpacity style={styles.login}>
+        <TouchableOpacity style={styles.login} onPress={() => this.props.navigation.navigate('Login')}>
           <Text style={styles.loginText}>Clique aqui</Text>
           <Text style={styles.loginText}>se já tiver uma conta :)</Text>
         </TouchableOpacity>

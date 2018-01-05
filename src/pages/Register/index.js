@@ -29,27 +29,27 @@ export default class RegisterScreen extends React.Component {
             <View>
               <Form>
                 <Item floatingLabel style={styles.item}>
-                  <Label style={styles.label}>Nome completo:</Label>
+                  <Label style={{color: colors.primaryDarker}}>Nome completo:</Label>
                   <Input />
                 </Item>
                 <Item floatingLabel style={styles.item}>
-                  <Label style={styles.label}>Senha:</Label>
+                  <Label style={{color: colors.primaryDarker}}>Senha:</Label>
                   <Input />
                 </Item>
                 <Item floatingLabel style={styles.item}>
-                  <Label style={styles.label}>Repita a senha:</Label>
+                  <Label style={{color: colors.primaryDarker}}>Repita a senha:</Label>
                   <Input />
                 </Item>
                 <Item floatingLabel style={styles.item}>
-                  <Label style={styles.label}>CPF:</Label>
+                  <Label style={{color: colors.primaryDarker}}>CPF:</Label>
                   <Input />
                 </Item>
               </Form>
               <View style={styles.containerSubmit}>
-                <Button style={styles.buttonSubmit}>
+                <TouchableOpacity style={styles.buttonSubmit} onPress={() => navigate('Home')}>
                   <Text style={styles.textSubmit}>Enviar</Text>
                   <Icon style={styles.iconSubmit} name='ios-arrow-dropright-circle' />
-                </Button>
+                </TouchableOpacity>
               </View>
             </View>
           </Content>

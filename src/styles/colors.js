@@ -2,7 +2,7 @@ const colors = {
   primary: '#009df4',
 
   primaryDarker: '#007ec3',
-  primaryDarkerT: 'rgba(247, 19, 154, 0.6)',
+  primaryLighter: '#439ecd',
 
   background: '#e1e2e2',
   textDarker: '#9b9b9b',

@@ -4,18 +4,24 @@ import { StackNavigator } from 'react-navigation';
 
 import WelcomeScreen from './src/pages/Welcome';
 import RegisterScreen from './src/pages/Register';
-import WelcomeMenu from './src/components/WelcomeMenu';
+import LoginScreen from './src/pages/Login';
+import HomeScreen from './src/pages/Home';
 
 const Main = StackNavigator({
-  Home: {
+  Welcome: {
     screen: WelcomeScreen,
-  },
-  Menu: {
-    screen: WelcomeMenu,
   },
   Register: {
     screen: RegisterScreen,
   },
+  Login: {
+    screen: LoginScreen,
+  },
+  Home: {
+    screen: HomeScreen,
+  }
+}, {
+    headerMode: 'none'
 });
 
 

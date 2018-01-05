@@ -29,7 +29,10 @@ const styles = StyleSheet.create({
   buttonSubmit: {
     backgroundColor: colors.primary,
     margin: metrics.doubleBaseMargin,
-    alignSelf: 'flex-end'
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+    flexDirection: 'row',
+    borderRadius: 10
   },
   textSubmit: {
     color: colors.white,
