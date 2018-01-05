@@ -31,6 +31,7 @@ export default class Sidebar extends React.Component {
             source={require('../../images/sidebar.png')}
             style={{
               height: 120,
+              width: 280,
               alignSelf: "stretch",
             }}
           />
