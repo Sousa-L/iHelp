@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
     color: colors.white,
     marginHorizontal: metrics.smallMargin,
   },
+  help: {
+    color: colors.white,
+    marginHorizontal: metrics.smallMargin,
+  },
   mic: {
     color: colors.white
   },

@@ -21,6 +21,21 @@ const routes = [
     icon:'md-person',
     route: 'Profile'
   },
+  {
+    name:'Conversas',
+    icon:'md-chatbubbles',
+    route: 'Bug'
+  },
+  {
+    name:'Favoritos',
+    icon:'md-heart',
+    route: 'Bug'
+  },
+  {
+    name:'Reportar bug',
+    icon:'md-bug',
+    route: 'Bug'
+  },
 ];
 export default class Sidebar extends React.Component {
   render() {
@@ -49,6 +64,13 @@ export default class Sidebar extends React.Component {
               );
             }}
           />
+          <ListItem
+            button
+            onPress={() => this.props.navigation.navigate(data.route)}
+          >
+            <Icon style={{color: colors.regular}} size={20} name='md-exit' />
+            <Text style={{marginHorizontal: metrics.baseMargin, color: colors.regular, fontSize: fonts.big}}>Sair</Text>
+          </ListItem>
         </Content>
       </Container>
     );

@@ -4,7 +4,7 @@ const colors = {
   primaryDarker: '#007ec3',
   primaryLighter: '#439ecd',
 
-  background: '#e1e2e2',
+  background: '#e8e9ee',
   textDarker: '#9b9b9b',
 
   darker: '#111',
@@ -12,7 +12,12 @@ const colors = {
   regular: '#666',
   light: '#c0c0c0',
   lighter: '#eee',
-  white: '#fff'
+  white: '#fff',
+
+  heart: '#fc4d32',
+  gold: '#f7e700',
+
+  whiteTransparent: 'rgba(255,255,255,0.8)'
 
 };
 

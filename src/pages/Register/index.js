@@ -46,7 +46,7 @@ export default class RegisterScreen extends React.Component {
                 </Item>
               </Form>
               <View style={styles.containerSubmit}>
-                <TouchableOpacity style={styles.buttonSubmit} onPress={() => navigate('Home')}>
+                <TouchableOpacity style={styles.buttonSubmit} onPress={() => navigate('Help')}>
                   <Text style={styles.textSubmit}>Enviar</Text>
                   <Icon style={styles.iconSubmit} name='ios-arrow-dropright-circle' />
                 </TouchableOpacity>

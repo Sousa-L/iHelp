@@ -6,6 +6,7 @@ import WelcomeScreen from './src/pages/Welcome';
 import RegisterScreen from './src/pages/Register';
 import LoginScreen from './src/pages/Login';
 import HomeScreen from './src/pages/Home';
+import HelpScreen from './src/pages/Help';
 
 const Main = StackNavigator({
   Welcome: {
@@ -19,6 +20,9 @@ const Main = StackNavigator({
   },
   Home: {
     screen: HomeScreen,
+  },
+  Help: {
+    screen: HelpScreen,
   }
 }, {
     headerMode: 'none'

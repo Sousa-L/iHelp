@@ -34,6 +34,7 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.headerTitle}>iHelp</Text>
           </Body>
           <Right style={styles.headerItem}>
+            <Icon name='ios-help-circle-outline' style={styles.help} />
           </Right>
         </Header>
         <Content>
@@ -54,20 +55,26 @@ export default class HomeScreen extends React.Component {
                 style={styles.catalogScroll}
                 >
                 <View style={styles.catalogItem}>
-                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
-                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Geladeria</Text>
+                  <TouchableOpacity onPress={() => navigate('Map')}>
+                    <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/computer.png')}/>
+                  </TouchableOpacity>
+                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Computador</Text>
                 </View>
                 <View style={styles.catalogItem}>
-                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
-                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Geladeria</Text>
+                  <TouchableOpacity>
+                    <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/notebook.png')}/>
+                  </TouchableOpacity>
+                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Notebook</Text>
                 </View>
                 <View style={styles.catalogItem}>
-                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
-                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Geladeria</Text>
+                  <TouchableOpacity>
+                    <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/phone.png')}/>
+                  </TouchableOpacity>
+                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Celular</Text>
                 </View>
                 <View style={styles.catalogItem}>
-                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
-                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Geladeria</Text>
+                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/printer.png')}/>
+                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Impressora</Text>
                 </View>
                 <View style={styles.catalogItem}>
                   <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
@@ -77,7 +84,7 @@ export default class HomeScreen extends React.Component {
             </View>
           </View>
           <View style={styles.catalogCategory}>
-            <Text style={styles.catalogTitle}>Eletrônicos</Text>
+            <Text style={styles.catalogTitle}>Eletrodomésticos</Text>
             <View style={styles.catalogList}>
               <ScrollView
                 horizontal
@@ -86,19 +93,19 @@ export default class HomeScreen extends React.Component {
                 >
                 <View style={styles.catalogItem}>
                   <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
-                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Geladeria</Text>
+                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Geladeira</Text>
                 </View>
                 <View style={styles.catalogItem}>
-                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
-                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Geladeria</Text>
+                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/microwave.png')}/>
+                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Microondas</Text>
                 </View>
                 <View style={styles.catalogItem}>
-                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
-                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Geladeria</Text>
+                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/icewater.png')}/>
+                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Gelágua</Text>
                 </View>
                 <View style={styles.catalogItem}>
-                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
-                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Geladeria</Text>
+                  <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/air.png')}/>
+                  <Text style={{fontSize: fonts.regular, color: colors.regular}}>Ar-Condicionado</Text>
                 </View>
                 <View style={styles.catalogItem}>
                   <Image style={{margin: metrics.smallMargin, height: 70, width: 70, borderRadius: 100}} source={require('../../images/refrigerator.png')}/>
@@ -108,7 +115,7 @@ export default class HomeScreen extends React.Component {
             </View>
           </View>
           <View style={styles.catalogCategory}>
-            <Text style={styles.catalogTitle}>Eletrônicos</Text>
+            <Text style={styles.catalogTitle}>Eletroportáteis</Text>
             <View style={styles.catalogList}>
               <ScrollView
                 horizontal
