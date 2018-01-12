@@ -24,6 +24,7 @@ export default class MapScreen extends React.Component {
         id: 0,
         title: 'João Paulo',
         description: 'Profissional Autônomo',
+        icondes: 'md-person',
         oc: 'Aberto',
         adress: '8:00 - 18:00 / Segunda à Sexta',
         number: 'Transporte gratuito',
@@ -37,10 +38,11 @@ export default class MapScreen extends React.Component {
       {
         id: 1,
         title: 'José Henrique',
-        description: 'Apenas nos fins de semana',
-        oc: 'Aberto',
-        adress: 'Rua Ciro Bilhar',
-        number: '(99)99999-9999',
+        description: 'Profissional Autônomo',
+        icondes: 'md-person',
+        oc: 'Fechado',
+        adress: '8:00 - 18:00 / Segunda à Sexta',
+        number: 'Transporte gratuito',
         latitude: -4.104493,
         longitude: -38.468605,
         args : {
@@ -50,11 +52,12 @@ export default class MapScreen extends React.Component {
       },
       {
         id: 2,
-        title: 'Maria Tereza',
-        description: 'Disponível: Sexta, Sábado e Domingo',
-        oc: 'Fechado',
-        adress: 'Rua Raimundo Nogueira',
-        number: '(99)99999-9999',
+        title: 'MD Informática',
+        description: 'Empresa',
+        icondes: 'ios-people',
+        oc: 'Aberto',
+        adress: '8:00 - 18:00 / Segunda à Sabado',
+        number: 'Transporte gratuito',
         latitude: -4.106493,
         longitude: -38.478605,
         args : {
@@ -93,7 +96,9 @@ export default class MapScreen extends React.Component {
             <Text style={styles.headerTitle}>Geladeira</Text>
           </Body>
           <Right style={styles.headerItem}>
-            <Icon name='ios-search' style={styles.icon} />
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Search')}>
+              <Icon name='ios-search' style={styles.icon}/>
+            </TouchableOpacity>
           </Right>
         </Header>
         <Tabs initialPage={0} locked={true}>
@@ -161,7 +166,7 @@ export default class MapScreen extends React.Component {
                       </View>
                       <View style={{flexDirection: 'row'}}>
                         <View style={{marginRight: metrics.smallMargin, alignItems: 'center', justifyContent: 'center'}}>
-                          <Icon name='md-person' style={{fontSize: 14, color: colors.regular, marginVertical: metrics.smallerMargin}} />
+                          <Icon name={place.icondes} style={{fontSize: 14, color: colors.regular, marginVertical: metrics.smallerMargin}} />
                           <Icon name='md-clock' style={{fontSize: 14, color: colors.regular, marginVertical: metrics.smallerMargin}} />
                           <Icon name='md-car' style={{fontSize: 14, color: colors.regular, marginVertical: metrics.smallerMargin}} />
                         </View>

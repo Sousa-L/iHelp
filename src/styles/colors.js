@@ -14,6 +14,7 @@ const colors = {
   lighter: '#eee',
   white: '#fff',
 
+  green: '#3fad7a',
   heart: '#fc4d32',
   gold: '#f7e700',
 

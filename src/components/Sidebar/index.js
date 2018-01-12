@@ -24,7 +24,7 @@ const routes = [
   {
     name:'Conversas',
     icon:'md-chatbubbles',
-    route: 'Bug'
+    route: 'ChatList'
   },
   {
     name:'Favoritos',
