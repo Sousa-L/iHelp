@@ -18,11 +18,16 @@ export default class RegisterScreen extends React.Component {
             style={styles.header}
             androidStatusBarColor={colors.primaryDarker}
             >
-            <Body>
-              <Text style={styles.headerBody}>Cadastro</Text>
+            <Left style={styles.headerItem}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+                <Icon name='md-arrow-back' style={styles.icon}/>
+              </TouchableOpacity>
+            </Left>
+            <Body style={styles.headerBody}>
+              <Text style={styles.headerTitle}>Cadastro</Text>
             </Body>
-            <Right>
-              <Icon style={styles.icon} name='ios-information-circle' />
+            <Right style={styles.headerItem}>
+
             </Right>
           </Header>
           <Content style={styles.content}>
@@ -41,7 +46,7 @@ export default class RegisterScreen extends React.Component {
                   <Input />
                 </Item>
                 <Item floatingLabel style={styles.item}>
-                  <Label style={{color: colors.primaryDarker}}>CPF:</Label>
+                  <Label style={{color: colors.primaryDarker}}>Número:</Label>
                   <Input />
                 </Item>
               </Form>
