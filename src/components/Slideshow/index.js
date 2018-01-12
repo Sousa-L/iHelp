@@ -4,6 +4,7 @@ import React from 'react';
 import {
   View,
   Text,
+  Image
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import styles from './styles.js';
@@ -12,13 +13,13 @@ import { metrics } from '../../styles';
 const Slideshow = ({}) => (
   <Swiper style={{ margin: metrics.doubleBaseMargin, flex: 1}}  autoplay={true}>
     <View style={styles.slide1}>
-      <Text style={styles.text}>Slide 1</Text>
+      <Image style={styles.image} source={require('../../images/Anuncio.png')}/>
     </View>
     <View style={styles.slide2}>
-      <Text style={styles.text}>Slide 2</Text>
+      <Image style={styles.image} source={require('../../images/Anuncio.png')}/>
     </View>
     <View style={styles.slide3}>
-      <Text style={styles.text}>Slide 3</Text>
+      <Image style={styles.image} source={require('../../images/Anuncio.png')}/>
     </View>
   </Swiper>
 );
