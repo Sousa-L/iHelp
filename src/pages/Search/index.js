@@ -78,7 +78,7 @@ export default class SearchScreen extends React.Component {
   };
   render() {
     const { latitude, longitude } = this.state.places[0];
-    const {navigate} = this.props.navigation;
+    const { navigate, goBack } = this.props.navigation;
     return (
       <Container>
         <Header
@@ -86,8 +86,8 @@ export default class SearchScreen extends React.Component {
          androidStatusBarColor={colors.primaryDarker}
          >
           <View style={styles.headerItem}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("DrawerOpen")}>
-              <Icon name='menu' style={styles.icon}/>
+            <TouchableOpacity onPress={() => goBack()}>
+              <Icon name='md-arrow-back' style={styles.icon}/>
             </TouchableOpacity>
           </View>
           <Body style={styles.headerBody}>

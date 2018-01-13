@@ -11,7 +11,7 @@ export default class RegisterScreen extends React.Component {
     header: null
   };
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate, goBack } = this.props.navigation;
     return (
       <Container>
           <Header
@@ -27,7 +27,6 @@ export default class RegisterScreen extends React.Component {
               <Text style={styles.headerTitle}>Cadastro</Text>
             </Body>
             <Right style={styles.headerItem}>
-
             </Right>
           </Header>
           <Content style={styles.content}>

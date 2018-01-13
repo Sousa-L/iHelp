@@ -5,12 +5,21 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: colors.primary
   },
+  headerItem: {
+    flex: 1,
+  },
   headerBody: {
+    flex:1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  headerTitle: {
     fontSize: fonts.bigger,
     color: colors.white
   },
   icon: {
     color: colors.white,
+    marginHorizontal: metrics.smallMargin,
   },
   content: {
     paddingLeft: metrics.baseMargin,

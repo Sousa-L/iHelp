@@ -11,18 +11,22 @@ export default class LoginScreen extends React.Component {
     header: null
   };
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate, goBack } = this.props.navigation;
     return (
       <Container>
           <Header
             style={styles.header}
             androidStatusBarColor={colors.primaryDarker}
             >
-            <Body>
-              <Text style={styles.headerBody}>Log In</Text>
+            <Left style={styles.headerItem}>
+              <TouchableOpacity onPress={() => goBack()}>
+                <Icon name='md-arrow-back' style={styles.icon}/>
+              </TouchableOpacity>
+            </Left>
+            <Body style={styles.headerBody}>
+              <Text style={styles.headerTitle}>Login</Text>
             </Body>
-            <Right>
-              <Icon style={styles.icon} name='ios-information-circle' />
+            <Right style={styles.headerItem}>
             </Right>
           </Header>
           <Content style={styles.content}>
