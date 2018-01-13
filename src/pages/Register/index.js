@@ -19,7 +19,7 @@ export default class RegisterScreen extends React.Component {
             androidStatusBarColor={colors.primaryDarker}
             >
             <Left style={styles.headerItem}>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+              <TouchableOpacity onPress={() => goBack()}>
                 <Icon name='md-arrow-back' style={styles.icon}/>
               </TouchableOpacity>
             </Left>
