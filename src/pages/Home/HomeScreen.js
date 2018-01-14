@@ -34,7 +34,9 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.headerTitle}>iHelp</Text>
           </Body>
           <Right style={styles.headerItem}>
-            <Icon name='ios-help-circle-outline' style={styles.help} />
+            <TouchableOpacity onPress={() => navigate('Help')}>
+              <Icon name='ios-help-circle-outline' style={styles.help} />
+            </TouchableOpacity>
           </Right>
         </Header>
         <Content>

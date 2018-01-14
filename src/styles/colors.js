@@ -17,7 +17,10 @@ const colors = {
   green: '#3fad7a',
   heart: '#fc4d32',
   gold: '#f7e700',
+  yellow: "#f4bb38",
+  orange: '#f3372b',
 
+  blackTransparent: 'rgba(0,0,0,0.3)',
   whiteTransparent: 'rgba(255,255,255,0.8)'
 
 };
