@@ -5,6 +5,7 @@ import MapScreen from '../Map';
 import ChatListScreen from '../ChatList';
 import SearchScreen from '../Search';
 import HelpScreen from '../Help';
+import BugScreen from '../Bug';
 import { Sidebar } from "../../components";
 import { DrawerNavigator } from "react-navigation";
 
@@ -16,6 +17,7 @@ const HomeScreenRouter = DrawerNavigator(
     ChatList: {screen: ChatListScreen, navigationOptions: { header: null } },
     Search: { screen: SearchScreen, navigationOptions: { header: null } },
     Help: { screen: HelpScreen, navigationOptions: { header: null } },
+    Bug: { screen: BugScreen, navigationOptions: { header: null } }
   },
   {
     contentComponent: props => <Sidebar {...props} />

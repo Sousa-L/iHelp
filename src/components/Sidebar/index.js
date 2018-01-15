@@ -27,12 +27,7 @@ const routes = [
     route: 'ChatList'
   },
   {
-    name:'Favoritos',
-    icon:'md-heart',
-    route: 'Bug'
-  },
-  {
-    name:'Reportar bug',
+    name:'Reportar problema',
     icon:'md-bug',
     route: 'Bug'
   },
@@ -66,7 +61,7 @@ export default class Sidebar extends React.Component {
           />
           <ListItem
             button
-            onPress={() => this.props.navigation.navigate(data.route)}
+            onPress={() => this.props.navigation.navigate('Welcome')}
           >
             <Icon style={{color: colors.regular}} size={20} name='md-exit' />
             <Text style={{marginHorizontal: metrics.baseMargin, color: colors.regular, fontSize: fonts.big}}>Sair</Text>
