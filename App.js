@@ -3,32 +3,29 @@ import { Platform, StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import WelcomeScreen from './src/pages/Welcome';
-import SelectScreen from './src/pages/Select';
-import MapScreen from './src/pages/Map';
-import ComputerMapScreen from './src/pages/Computermap';
-import AirconditionerMapScreen from './src/pages/Airconditionermap';
-import PrinterMapScreen from './src/pages/Printermap';
-import RefrigeratorMapScreen from './src/pages/Refrigeratormap';
+import RegisterScreen from './src/pages/Register';
+import LoginScreen from './src/pages/Login';
+import HomeScreen from './src/pages/Home';
+import HelpScreen from './src/pages/Help';
 
 const Main = StackNavigator({
-  Home: {
+  Welcome: {
     screen: WelcomeScreen,
   },
-  Select: {
-    screen: SelectScreen,
+  Register: {
+    screen: RegisterScreen,
   },
-  ComputerMap: {
-    screen: ComputerMapScreen,
+  Login: {
+    screen: LoginScreen,
   },
-  AirconditionerMap: {
-    screen: AirconditionerMapScreen,
+  Home: {
+    screen: HomeScreen,
   },
-  PrinterMap: {
-    screen: PrinterMapScreen,
-  },
-  RefrigeratorMap: {
-    screen: RefrigeratorMapScreen,
-  },
+  Help: {
+    screen: HelpScreen,
+  }
+}, {
+    headerMode: 'none'
 });
 
 

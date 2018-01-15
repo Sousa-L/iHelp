@@ -85,15 +85,15 @@ export default class MapScreen extends React.Component {
           >
             { this.state.places.map(place => (
               <MapView.Marker
-              ref={mark => place.mark = mark}
-              key={place.id}
-              title={place.title}
-              description={place.description}
-              coordinate={{
-                latitude: place.latitude,
-                longitude: place.longitude,
-              }}
-            />
+                ref={mark => place.mark = mark}
+                key={place.id}
+                title={place.title}
+                description={place.description}
+                coordinate={{
+                  latitude: place.latitude,
+                  longitude: place.longitude,
+                }}
+              />
             ))}
           </MapView>
           <ScrollView
