@@ -21,7 +21,8 @@ const colors = {
   orange: '#f3372b',
 
   blackTransparent: 'rgba(0,0,0,0.3)',
-  whiteTransparent: 'rgba(255,255,255,0.8)'
+  whiteTransparent: 'rgba(255,255,255,0.8)',
+  transparent: 'rgba(0,0,0,0)',
 
 };
 

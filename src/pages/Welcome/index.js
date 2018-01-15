@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Container } from 'native-base';
+import { Container, Header } from 'native-base';
 
 import { Logo, Background, WelcomeMenu, Mark } from '../../components';
 import styles from './styles';
@@ -14,11 +14,16 @@ export default class WelcomeScreen extends React.Component {
     const {navigate} = this.props.navigation;
     return (
       <Container>
-          <Background image={require('../../images/pattern.png')} />
-          <View style={styles.container}>
-            <Mark logoSize={200} />
-            <WelcomeMenu navigation={this.props.navigation} />
-          </View>
+        <Header
+         noShadow
+         style={styles.header}
+         androidStatusBarColor={colors.primaryDarker}
+         />
+        <Background image={require('../../images/pattern.png')} />
+        <View style={styles.container}>
+          <Mark logoSize={200} />
+          <WelcomeMenu navigation={this.props.navigation} />
+        </View>
       </Container>
     );
   }
